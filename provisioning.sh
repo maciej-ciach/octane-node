@@ -10,11 +10,11 @@ sudo -u user echo "s3://${S3_BUCKET}/TU_ZMIEN_SOBIE/" > /home/user/Desktop/kaczk
 sudo -u user echo '#!/bin/bash
 S3_URL=$(cat lokalizacja.txt)
 echo $S3_URL
-aws s3 sync $S3_URL .' > /home/user/Desktop/kaczka/download.sh
+aws s3 sync --include "*" --exclude "*.sh" $S3_URL .' > /home/user/Desktop/kaczka/download.sh
 sudo -u user echo '#!/bin/bash
 S3_URL=$(cat lokalizacja.txt)
 echo $S3_URL
-aws s3 sync . $S3_URL' > /home/user/Desktop/kaczka/upload.sh
+aws s3 sync --include "*" --exclude "*.sh" . $S3_URL' > /home/user/Desktop/kaczka/upload.sh
 sudo -u user echo '#!/bin/bash
 find . -name "*.orbx"|while read fname; do
 /home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/octane "$fname" --script /home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/script.lua
