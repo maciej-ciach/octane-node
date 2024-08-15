@@ -5,6 +5,7 @@ unzip /cudnn_8_0_4_linux.zip -d /workspace/home/user/.OctaneRender/thirdparty/cu
 chown -R user:user /home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/
 sudo -u user bash -c 'export HOME=/home/user && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install'
 sudo -u user bash -c 'export HOME=/home/user && mkdir ~/Desktop/kaczka'
+sudo -u user echo "s3://${S3_BUCKET}/TU_ZMIEN_SOBIE/" > /home/user/Desktop/kaczka/lokalizacja.txt
 sudo -u user echo '#!/bin/bash
 S3_URL=$(cat lokalizacja.txt)
 echo $S3_URL
@@ -14,5 +15,5 @@ S3_URL=$(cat lokalizacja.txt)
 echo $S3_URL
 aws s3 sync . $S3_URL' > /home/user/Desktop/kaczka/upload.sh
 chown -R user:user /home/user/Desktop/kaczka/
-sudo -u user bash -c "chmod +x /home/user/Desktop/upload.sh"
-sudo -u user bash -c "chmod +x /home/user/Desktop/download.sh"
+sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/upload.sh"
+sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/download.sh"
