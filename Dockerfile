@@ -11,9 +11,11 @@ COPY OctaneRender_Studio+_2022_1_1_linux.zip /
 
 RUN curl -L -o /cudnn_8_0_4_linux.zip https://render.otoy.com/downloads/66/0c/c6/29/cudnn_8_0_4_linux.zip
 
-RUN cp /cudnn_8_0_4_linux.zip /opt/storage/
+# RUN cp /cudnn_8_0_4_linux.zip /opt/storage/
 
-COPY OctaneRender_Studio+_2022_1_1_linux.zip /opt/storage/OctaneRender_Studio+_2022_1_1_linux.zip
+# COPY OctaneRender_Studio+_2022_1_1_linux.zip /opt/storage/OctaneRender_Studio+_2022_1_1_linux.zip
+
+COPY provisioning.sh /opt/ai-dock/bin/provisioning.sh
 
 # RUN unzip /workspace/home/user/.OctaneRender/thirdparty/cudnn_8_0_4/cudnn_8_0_4_linux.zip -d /workspace/home/user/.OctaneRender/thirdparty/cudnn_8_0_4/
 
