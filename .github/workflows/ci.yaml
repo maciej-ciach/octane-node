@@ -50,7 +50,7 @@ jobs:
           aws s3 cp s3://${{ secrets.BUCKET_NAME }}/OctaneRender_Studio+_2022_1_1_linux.zip .
       - name: Build and push Docker image
         id: push
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: true
