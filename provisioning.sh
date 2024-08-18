@@ -17,7 +17,7 @@ echo $S3_URL
 aws s3 sync --include "*" --exclude "*.sh" . $S3_URL' > /home/user/Desktop/kaczka/upload.sh
 sudo -u user echo '#!/bin/bash
 find . -name "*.orbx"|while read fname; do
-/home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/octane "$fname" --script /home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/script.lua
+/home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/octane "$fname" --script /home/user/Desktop/OctaneRender_Studio+_2022_1_1_linux/script.lua --no-gui
 done' > /home/user/Desktop/kaczka/octane_start.sh
 chown -R user:user /home/user/Desktop/kaczka/
 sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/upload.sh"
