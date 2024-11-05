@@ -30,3 +30,4 @@ chown -R user:user /home/user/Desktop/kaczka/
 sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/upload.sh"
 sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/download.sh"
 sudo -u user bash -c "chmod +x /home/user/Desktop/kaczka/octane_start.sh"
+  
